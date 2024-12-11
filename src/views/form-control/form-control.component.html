@@ -1,0 +1,17 @@
+<div>
+    <label> Form Control:
+        <input [class.invalid]="invalid" type="text" [formControl]="control">
+    </label>
+    <p>Value : {{control.value}}</p>
+    <p>Valid : {{control.valid}}</p>
+    <p>Touched : {{control.touched}}</p>
+    <p>Dirty : {{control.dirty}}</p>
+    <p>Errors : {{control.errors | json}}</p>
+    @if (invalid) {
+        <p [style.color]="'red'">Valeur invalide</p>
+    }
+    <ul class="actions">
+        <li><button class="button" [disabled]="control.invalid">Send</button></li>
+        <li><button class="button" (click)="control.reset()">Reset</button></li>
+    </ul>
+</div>

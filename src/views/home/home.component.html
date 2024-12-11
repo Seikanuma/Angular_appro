@@ -1,0 +1,11 @@
+<div class="h-full w-full flex gap-10 flex-wrap justify-center items-center">
+    <app-stepper>
+        @for(post of data | async; track $index){
+        <app-step>
+            <div class="h-full w-full flex justify-center items-center">
+                <app-articles [post]="post" />
+            </div>
+        </app-step>
+        }
+    </app-stepper>
+</div>
